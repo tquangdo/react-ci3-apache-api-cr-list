@@ -22,10 +22,6 @@ class Api extends CI_Controller {
 		$this->form_validation->set_rules("color", "color", "trim|max_length[45]");
 		$return = array();
 		if($this->form_validation->run()){
-			/* $data = array(
-				'first_name' => trim($this->input->post('name')),
-				'last_name'  => trim($this->input->post('last_name'))
-			);*/
 			$data = array(
 				'name' => trim($this->input->post('name')),
 				'DOB' => trim($this->input->post('DOB')),

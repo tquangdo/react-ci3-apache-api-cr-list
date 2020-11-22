@@ -105,10 +105,13 @@ const App = () => (
         params.append('DOB', DOB);
         params.append('email', email);
         params.append('color', color);
+        // FE: click "Submit" > call this axios > call "php\application\controllers\Api.php":saveUser()
+        // call "php\application\models\Api_model.php":insert_api() > call "db->insert('Users', $data)"
+        // my-mysql-scripts\db_dump.sql > CREATE DATABASE  IF NOT EXISTS `cielo` > CREATE TABLE `Users` ()
+        // chỉ dùng dbname = "cielo", KO dùng "test_db"(với 'devuser' & 'devpass') trong *.yml
         axios
           .post(`http://127.0.0.1:8000/index.php/api/saveUser`, params)
           .then(res => {
-            console.log(res);
             if (res.data.error) {
               alert(res.data.email);
               setSubmitting(false);
@@ -132,7 +135,7 @@ const App = () => (
       }) => (
           <MYFORM onSubmit={handleSubmit} className="mx-auto">
             <Form.Group controlId="formName">
-              <Form.Label>Name :</Form.Label>
+              <Form.Label>Tên :</Form.Label>
               <Form.Control
                 type="text"
                 /* This name property is used to access the value of the form element via values.nameOfElement */
@@ -153,7 +156,7 @@ const App = () => (
               ) : null}
             </Form.Group>
             <Form.Group controlId="formDOB">
-              <Form.Label>Date of Birth :</Form.Label>
+              <Form.Label>Sinh nhật :</Form.Label>
               <Form.Control
                 type="text"
                 name="DOB"
@@ -183,7 +186,7 @@ const App = () => (
               ) : null}
             </Form.Group>
             <Form.Group controlId="formColor">
-              <Form.Label>Favorite Color :</Form.Label>
+              <Form.Label>Thích màu :</Form.Label>
               <Form.Control
                 type="text"
                 name="color"

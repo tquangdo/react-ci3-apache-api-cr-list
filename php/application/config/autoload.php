@@ -89,6 +89,10 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
+// 20201122 DoTQ
+// 1) php\application\config\routes.php: $route['default_controller'] = 'welcome'
+// 2) php\application\controllers\Welcome.php: index(){view('welcome_msg')}
+// 3) php\application\views\welcome_msg.php: <div id="app">base_url('react_app/dist/index_bundle.js')</div>
 $autoload['helper'] = array('url');
 
 /*
