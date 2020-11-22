@@ -107,10 +107,10 @@ const App = () => (
         params.append('color', color);
         // FE: click "Submit" > call this axios > call "php\application\controllers\Api.php":saveUser()
         // call "php\application\models\Api_model.php":insert_api() > call "db->insert('Users', $data)"
-        // my-mysql-scripts\db_dump.sql > CREATE DATABASE  IF NOT EXISTS `cielo` > CREATE TABLE `Users` ()
-        // chỉ dùng dbname = "cielo", KO dùng "test_db"(với 'devuser' & 'devpass') trong *.yml
         axios
           .post(`http://127.0.0.1:8000/index.php/api/saveUser`, params)
+          // khi run cmd: docker-compose up (sau khi remove image cache cũ) sẽ call db_dump.sql > CREATE DATABASE `cielo` & TABLE `Users`
+          // chỉ dùng dbname = "cielo", KO dùng "test_db" trong *.yml
           .then(res => {
             if (res.data.error) {
               alert(res.data.email);

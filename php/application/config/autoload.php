@@ -93,6 +93,7 @@ $autoload['drivers'] = array();
 // 1) php\application\config\routes.php: $route['default_controller'] = 'welcome'
 // 2) php\application\controllers\Welcome.php: index(){view('welcome_msg')}
 // 3) php\application\views\welcome_msg.php: <div id="app">base_url('react_app/dist/index_bundle.js')</div>
+// -> nếu là array() thì khi access "localhost:8000" KO thể redirect sang "localhost:8000/react_app/dist/index_bundle.js"
 $autoload['helper'] = array('url');
 
 /*
