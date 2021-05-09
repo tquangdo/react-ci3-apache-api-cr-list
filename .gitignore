@@ -32,10 +32,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/tests/
 /tests/results/
 
-/dist/
-
 #
-dist/
 node_modules/
-/php/react_app/dist/
 /php/react_app/node_modules/
