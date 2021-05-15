@@ -6,7 +6,7 @@
 ### FE
 1. `cd php/react_app`
 2. `react_app% npm i`
->3. (when reflect to BE by webpack after change in FE) delete folder `php/react_app/dist`
+>3. (when reflect to BE by webpack after change in FE: delete folder `php/react_app/dist`)
 4. `npm run prod`
 - => will auto create folder `php/react_app/dist` 
 ### BE
