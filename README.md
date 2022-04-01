@@ -26,7 +26,7 @@
 1. ### config OpenSSL
     - $ docker exec -it php74-dotq bash
     - vim /etc/ssl/openssl.cnf
-    - apt-get install -y vim)
+    > if not install vim yet: `apt-get install -y vim`
     - edit "CipherString = DEFAULT@SECLEVEL=2" -> "CipherString = DEFAULT@SECLEVEL=1"
     - exit
     - $ docker-compose restart
